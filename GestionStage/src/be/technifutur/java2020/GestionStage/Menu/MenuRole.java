@@ -1,35 +1,35 @@
 package be.technifutur.java2020.GestionStage.Menu;
 
-import be.technifutur.java2020.GestionStage.Role;
+import be.technifutur.java2020.GestionStage.Gestionnaires.GestionnaireRole;
 
 public class MenuRole {
 
-    public Role roleChoisi;
+    public GestionnaireRole roleChoisi;
 
-    public  void choixRole (int choix){
+    public void choixRole (int choix){
 
         switch (choix){
 
-            case 1 : this.roleChoisi = Role.PARTICIPANT;
+            case 1 : this.roleChoisi = GestionnaireRole.PARTICIPANT;
             return;
 
-            case 2 : this.roleChoisi = Role.INSCRIT;
+            case 2 : this.roleChoisi = GestionnaireRole.INSCRIT;
             return;
 
-            case 3 : this.roleChoisi = Role.ORGANISATEUR;
+            case 3 : this.roleChoisi = GestionnaireRole.ORGANISATEUR;
             return;
 
-            case 4 : this.roleChoisi = Role.TRESORIER;
+            case 4 : this.roleChoisi = GestionnaireRole.TRESORIER;
             return;
 
-            case 5 : this.roleChoisi = Role.SECRETARIAT;
+            case 5 : this.roleChoisi = GestionnaireRole.SECRETARIAT;
             return;
 
         }
 
     }
 
-    public Role getRoleChoisi() {
+    public GestionnaireRole getRoleChoisi() {
 
         return roleChoisi;
 

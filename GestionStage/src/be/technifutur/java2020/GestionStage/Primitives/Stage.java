@@ -1,21 +1,23 @@
-package be.technifutur.java2020.GestionStage;
+package be.technifutur.java2020.GestionStage.Primitives;
+
+import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 
-public class CreationStage {
+public class Stage extends StageModel {
 
     //---------------------------------------------------------------------- PROPRIETES
+
+    private String nom;
 
     private LocalDateTime dateDebut;
     private LocalDateTime dateFin;
 
-    private String nom;
+    //------------------------------------------------------------------------ SETTER
 
-    //---------------------------------------------------------------------- SETTER
-
-    public void setDateDebut (String dateEntree){
+    private void setDateDebut (String dateEntree){
 
         FormatStyle dateStyle = FormatStyle.FULL;
         FormatStyle timeStyle = FormatStyle.MEDIUM;
@@ -26,7 +28,7 @@ public class CreationStage {
 
     }
 
-    public void setDateFin (String dateEntree){
+    private void setDateFin (String dateEntree){
 
         FormatStyle dateStyle = FormatStyle.FULL;
         FormatStyle timeStyle = FormatStyle.MEDIUM;
@@ -37,7 +39,7 @@ public class CreationStage {
 
     }
 
-    public void setNom(String nom) {
+    private void setNom(String nom) {
 
         this.nom = nom;
 
@@ -62,4 +64,27 @@ public class CreationStage {
         return nom;
 
     }
+
+    //----------------------------------------------------------------------- CONSTRUCTEUR
+
+    public Stage(String nom, String dateDebut, String dateFin) {
+
+        setNom(nom);
+        setDateDebut(dateDebut);
+        setDateFin(dateFin);
+
+    }
+
+
+    //----------------------------------------------------------------------------- METHODE INTERFACE
+
+    @Override
+    public void modifierStage(String nom, String dateDebut, String dateFin) {
+
+        setDateDebut(nom);
+        setDateFin(dateDebut);
+        setNom(dateFin);
+
+    }
+
 }
