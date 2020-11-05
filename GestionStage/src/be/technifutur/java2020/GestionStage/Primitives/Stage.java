@@ -5,6 +5,7 @@ import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.Date;
 
 public class Stage extends StageModel {
 
@@ -15,27 +16,31 @@ public class Stage extends StageModel {
     private LocalDateTime dateDebut;
     private LocalDateTime dateFin;
 
-    //------------------------------------------------------------------------ SETTER
+    //---------------------------------------------------------------------- METHODES
 
-    private void setDateDebut (String dateEntree){
+    public LocalDateTime transformDate (String dateRecue){
 
-        FormatStyle dateStyle = FormatStyle.FULL;
-        FormatStyle timeStyle = FormatStyle.MEDIUM;
+        LocalDateTime dateReturn;
 
-        DateTimeFormatter formateur = DateTimeFormatter.ofLocalizedDateTime(dateStyle, timeStyle);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 
-        this.dateDebut = LocalDateTime.parse(dateEntree, formateur);
+        dateReturn = LocalDateTime.parse(dateRecue, formatter);
+
+        return dateReturn;
 
     }
 
-    private void setDateFin (String dateEntree){
+    //------------------------------------------------------------------------ SETTER
 
-        FormatStyle dateStyle = FormatStyle.FULL;
-        FormatStyle timeStyle = FormatStyle.MEDIUM;
+    private void setDateDebut (String dateRecue){
 
-        DateTimeFormatter formateur = DateTimeFormatter.ofLocalizedDateTime(dateStyle, timeStyle);
+        this.dateDebut = transformDate(dateRecue);
 
-        this.dateFin = LocalDateTime.parse(dateEntree, formateur);
+    }
+
+    private void setDateFin (String dateRecue){
+
+        this.dateFin = transformDate(dateRecue);
 
     }
 
@@ -87,4 +92,14 @@ public class Stage extends StageModel {
 
     }
 
+    @Override
+    public String toString() {
+
+        String chaine;
+
+        chaine = "Nom du Stage : " + this.nom + "  Date de début du stage : " + dateDebut.toString() + " Date de fin du stage : " + dateFin.toString();
+
+        return chaine;
+
+    }
 }

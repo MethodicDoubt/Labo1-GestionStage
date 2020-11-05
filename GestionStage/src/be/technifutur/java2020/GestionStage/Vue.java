@@ -91,11 +91,13 @@ public class Vue {
 
                     CreationStage.ajoutStage(nom, dateDebut, dateFin);
 
-                    while (GestionnaireStage.getStageList().iterator().hasNext()){
+                    Iterator<Stage> iterator = GestionnaireStage.getStageList().iterator();
+
+                    while (iterator.hasNext()){
 
                         int i = 0;
 
-                        System.out.print(GestionnaireStage.getStageList().indexOf(i) + " (" + i + ") " + " / ");
+                        System.out.print(iterator.next() + " (" + i + ") " + " / ");
 
                         i++;
 
@@ -133,11 +135,13 @@ public class Vue {
 
                     ModificationStage.setStage(GestionnaireStage.getStageList(), choix, nom, dateDebut, dateFin);
 
-                    while (GestionnaireStage.getStageList().iterator().hasNext()){
+                    iterator = GestionnaireStage.getStageList().iterator();
 
-                        int i = 0;
+                    int i = 0;
 
-                        System.out.print(GestionnaireStage.getStageList().indexOf(i) + " (" + i + ") " + " / ");
+                    while (iterator.hasNext()){
+
+                        System.out.print(iterator.next() + " (" + i + ") " + " / ");
 
                         i++;
 
@@ -149,7 +153,7 @@ public class Vue {
 
         }
 
-        afficherFonctionnalite(fonctionnaliteChoisie);
+        afficherMenuFonctionnalite();
 
     }
 
