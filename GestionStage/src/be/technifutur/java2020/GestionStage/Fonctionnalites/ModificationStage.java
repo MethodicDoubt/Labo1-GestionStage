@@ -13,7 +13,7 @@ public class ModificationStage {
 
     //------------------------------------------------------------------------- METHOD
 
-    public void setStage(List<Stage> stageList, int index, String nom, String dateDebut, String dateFin){
+    public static void setStage(List<Stage> stageList, int index, String nom, String dateDebut, String dateFin){
 
         stageList.get(index).modifierStage(nom, dateDebut, dateFin);
 

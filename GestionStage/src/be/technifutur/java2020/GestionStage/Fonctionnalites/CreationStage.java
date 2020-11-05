@@ -11,11 +11,11 @@ public class CreationStage {
 
     //------------------------------------------------------------------------ PROPRIETES
 
-    private List<Stage> stageList = GestionnaireStage.getStageList();
+    private static List<Stage> stageList = GestionnaireStage.getStageList();
 
     //------------------------------------------------------------------------- METHOD
 
-    public void ajoutStage(String nom, String dateDebut, String dateFin){
+    public static void ajoutStage(String nom, String dateDebut, String dateFin){
 
         stageList.add(new Stage(nom, dateDebut, dateFin));
 
