@@ -97,7 +97,7 @@ public class Stage extends StageModel {
 
         String chaine;
 
-        chaine = "Nom du Stage : " + this.nom + "  Date de début du stage : " + dateDebut.toString() + " Date de fin du stage : " + dateFin.toString();
+        chaine = "Nom du Stage : " + this.nom + " /  Date de début du stage : " + dateDebut.toString() + " /  Date de fin du stage : " + dateFin.toString();
 
         return chaine;
 

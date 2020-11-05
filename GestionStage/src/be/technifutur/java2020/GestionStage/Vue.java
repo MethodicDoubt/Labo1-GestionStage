@@ -19,6 +19,7 @@ public class Vue {
 
     GestionnaireRole roleChoisi;
     GestionnaireFonctionnalite fonctionnaliteChoisie;
+    MenuRole roleUser = new MenuRole();
 
     public void afficherMenuRole () {
 
@@ -35,6 +36,8 @@ public class Vue {
         System.out.println("- SECRETARIAT(5)");
 
         choix = Integer.parseInt(scanner.nextLine());
+
+        roleUser.choixRole(choix);
 
         this.roleChoisi = menu.getRoleChoisi();
 
@@ -55,13 +58,19 @@ public class Vue {
         System.out.println("- SUPPRIMER UN STAGE(3)");
         System.out.println("- S'INSCRIRE A UN STAGE(4)");
 
-        choix = Integer.parseInt(scanner.nextLine());
+        String input = scanner.next();
 
-        menu.selectionFonctionnalite(choix);
+        if (!input.equals("q")) {
 
-        this.fonctionnaliteChoisie = menu.getFonctionnaliteChoisie();
+            choix = Integer.parseUnsignedInt(input);
 
-        afficherFonctionnalite(fonctionnaliteChoisie);
+            menu.selectionFonctionnalite(choix);
+
+            this.fonctionnaliteChoisie = menu.getFonctionnaliteChoisie();
+
+            afficherFonctionnalite(fonctionnaliteChoisie);
+
+        }
 
     }
 
@@ -74,82 +83,78 @@ public class Vue {
         String dateFin;
         int choix;
 
-        if (!scanner.equals('q')){
+        switch (fonctionnaliteChoisie){
 
-            switch (fonctionnaliteChoisie){
+            case CREATION:
 
-                case CREATION:
+                System.out.println("- CREER UN NOM POUR LE STAGE");
+                nom = scanner.nextLine();
 
-                    System.out.println("- CREER UN NOM POUR LE STAGE");
-                    nom = scanner.nextLine();
+                System.out.println("- CREER UNE DATE DE DEBUT DE STAGE");
+                dateDebut = scanner.nextLine();
 
-                    System.out.println("- CREER UNE DATE DE DEBUT DE STAGE");
-                    dateDebut = scanner.nextLine();
+                System.out.println("- CREER UNE DATE DE FIN DE STAGE");
+                dateFin = scanner.nextLine();
 
-                    System.out.println("- CREER UNE DATE DE FIN DE STAGE");
-                    dateFin = scanner.nextLine();
+                CreationStage.ajoutStage(nom, dateDebut, dateFin);
 
-                    CreationStage.ajoutStage(nom, dateDebut, dateFin);
+                Iterator<Stage> iterator = GestionnaireStage.getStageList().iterator();
 
-                    Iterator<Stage> iterator = GestionnaireStage.getStageList().iterator();
-
-                    while (iterator.hasNext()){
-
-                        int i = 0;
-
-                        System.out.print(iterator.next() + " (" + i + ") " + " / ");
-
-                        i++;
-
-                    }
-
-                    return;
-
-                case INSCRIPTION:
-                    // InscriptionStage.ajoutInscription();
-                    return;
-
-                case MODIFICATION:
-
-                    while (GestionnaireStage.getStageList().iterator().hasNext()){
-
-                        int i = 0;
-
-                        System.out.print(GestionnaireStage.getStageList().indexOf(i) + " (" + i + ") " + " / ");
-
-                        i++;
-
-                    }
-
-                    System.out.println("- CHOISIR UN STAGE A MODIFIER");
-                    choix = Integer.parseInt(scanner.nextLine());
-
-                    System.out.println("- MODIFIER LE NOM DU STAGE");
-                    nom = scanner.nextLine();
-
-                    System.out.println("- MODIFIER LA DATE DE DEBUT DU STAGE");
-                    dateDebut = scanner.nextLine();
-
-                    System.out.println("- MODIFIER LA DATE DE FIN DU STAGE");
-                    dateFin = scanner.nextLine();
-
-                    ModificationStage.setStage(GestionnaireStage.getStageList(), choix, nom, dateDebut, dateFin);
-
-                    iterator = GestionnaireStage.getStageList().iterator();
+                while (iterator.hasNext()){
 
                     int i = 0;
 
-                    while (iterator.hasNext()){
+                    System.out.print(iterator.next() + " // Stage numéro " + i + "\n");
 
-                        System.out.print(iterator.next() + " (" + i + ") " + " / ");
+                    i++;
 
-                        i++;
+                }
 
-                    }
+                break;
 
-                    return;
+            case INSCRIPTION:
+                // InscriptionStage.ajoutInscription();
+                break;
 
-            }
+            case MODIFICATION:
+
+                while (GestionnaireStage.getStageList().iterator().hasNext()){
+
+                    int i = 0;
+
+                    System.out.print(GestionnaireStage.getStageList().indexOf(i) + " (" + i + ") " + " / ");
+
+                    i++;
+
+                }
+
+                System.out.println("- CHOISIR UN STAGE A MODIFIER");
+                choix = Integer.parseInt(scanner.nextLine());
+
+                System.out.println("- MODIFIER LE NOM DU STAGE");
+                nom = scanner.nextLine();
+
+                System.out.println("- MODIFIER LA DATE DE DEBUT DU STAGE");
+                dateDebut = scanner.nextLine();
+
+                System.out.println("- MODIFIER LA DATE DE FIN DU STAGE");
+                dateFin = scanner.nextLine();
+
+                ModificationStage.setStage(GestionnaireStage.getStageList(), choix, nom, dateDebut, dateFin);
+
+                iterator = GestionnaireStage.getStageList().iterator();
+
+                int i = 0;
+
+                while (iterator.hasNext()){
+
+                    System.out.print(iterator.next() + " (" + i + ") " + " / ");
+
+                    i++;
+
+                }
+
+                break;
 
         }
 
