@@ -96,7 +96,7 @@ public class Vue {
                 System.out.println("- CREER UNE DATE DE FIN DE STAGE");
                 dateFin = scanner.nextLine();
 
-                CreationStage.ajoutStage(nom, dateDebut, dateFin);
+                CreationStage.run(nom, dateDebut, dateFin);
 
                 Iterator<Stage> iterator = GestionnaireStage.getStageList().iterator();
 

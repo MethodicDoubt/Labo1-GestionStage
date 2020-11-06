@@ -16,31 +16,17 @@ public class Stage extends StageModel {
     private LocalDateTime dateDebut;
     private LocalDateTime dateFin;
 
-    //---------------------------------------------------------------------- METHODES
-
-    public LocalDateTime transformDate (String dateRecue){
-
-        LocalDateTime dateReturn;
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-
-        dateReturn = LocalDateTime.parse(dateRecue, formatter);
-
-        return dateReturn;
-
-    }
-
     //------------------------------------------------------------------------ SETTER
 
-    private void setDateDebut (String dateRecue){
+    private void setDateDebut (LocalDateTime dateRecue){
 
-        this.dateDebut = transformDate(dateRecue);
+        this.dateDebut = dateRecue;
 
     }
 
-    private void setDateFin (String dateRecue){
+    private void setDateFin (LocalDateTime dateRecue){
 
-        this.dateFin = transformDate(dateRecue);
+        this.dateFin = dateRecue;
 
     }
 
@@ -72,7 +58,7 @@ public class Stage extends StageModel {
 
     //----------------------------------------------------------------------- CONSTRUCTEUR
 
-    public Stage(String nom, String dateDebut, String dateFin) {
+    public Stage(String nom, LocalDateTime dateDebut, LocalDateTime dateFin) {
 
         setNom(nom);
         setDateDebut(dateDebut);
@@ -83,12 +69,11 @@ public class Stage extends StageModel {
 
     //----------------------------------------------------------------------------- METHODE INTERFACE
 
-    @Override
-    public void modifierStage(String nom, String dateDebut, String dateFin) {
+    public void modifierStage(String nom, LocalDateTime dateDebut, LocalDateTime dateFin) {
 
-        setDateDebut(nom);
-        setDateFin(dateDebut);
-        setNom(dateFin);
+        setNom(nom);
+        setDateDebut(dateDebut);
+        setDateFin(dateFin);
 
     }
 

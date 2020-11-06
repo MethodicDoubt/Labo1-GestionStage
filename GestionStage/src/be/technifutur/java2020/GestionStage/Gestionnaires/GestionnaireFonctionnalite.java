@@ -2,6 +2,6 @@ package be.technifutur.java2020.GestionStage.Gestionnaires;
 
 public enum GestionnaireFonctionnalite {
 
-    CREATION, MODIFICATION, SUPPRESSION, INSCRIPTION
+    CREATION, MODIFICATION, SUPPRESSION, INSCRIPTION, RECUPERATION;
 
 }

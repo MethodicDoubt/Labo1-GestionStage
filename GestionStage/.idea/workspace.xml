@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5910eff8-54bb-4026-bf66-7b9bab8521ab" name="Default Changelist" comment="Premier tour de boucle dans navigation des menus&#10;Résolution problème format date&#10;//Probleme de boucle du menu">
+      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/FonctionnaliteModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Fonctionnalite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Vue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Vue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/CreationStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/CreationStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/InscriptionStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/InscriptionStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Gestionnaires/GestionnaireFonctionnalite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Gestionnaires/GestionnaireFonctionnalite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/StageModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/StageModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Stage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Vue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Vue.java" afterDir="false" />
     </list>
