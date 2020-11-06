@@ -1,6 +1,7 @@
 package be.technifutur.java2020.GestionStage.Fonctionnalites;
 
 
+import be.technifutur.java2020.GestionStage.Exceptions.InvalidNameException;
 import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import be.technifutur.java2020.GestionStage.Primitives.Stage;
 
@@ -27,20 +28,48 @@ public class CreationStage implements Runnable{
 
         Scanner entree = new Scanner(System.in);
 
+        boolean valid = false;
+
         //CODE DE SAISIE
 
-        System.out.println("- CREER UN NOM POUR LE STAGE");
-        nom = entree.nextLine();
+        do {
 
-        System.out.println("- CREER UNE DATE DE DEBUT DE STAGE");
-        dateDebut = transformDate(entree.nextLine());
+            valid = true;
 
-        System.out.println("- CREER UNE DATE DE FIN DE STAGE");
-        dateFin = transformDate(entree.nextLine());
+            System.out.println("- CREER UN NOM POUR LE STAGE");
+            nom = entree.nextLine();
 
-        while (isValid(dateDebut, dateFin)) {
+            if(!isValid((nom))){
 
-            StageModel.StageList.add(new Stage(nom, dateDebut, dateFin));
+                valid = false;
+                System.out.println("Nom de stage déjà utilisé");
+
+            }
+
+        }while(!valid);
+
+        do {
+
+            System.out.println("- CREER UNE DATE DE DEBUT DE STAGE");
+            dateDebut = transformDate(entree.nextLine());
+
+        }while(dateDebut == null);
+
+        do {
+
+            System.out.println("- CREER UNE DATE DE FIN DE STAGE");
+            dateFin = transformDate(entree.nextLine());
+
+        }while(dateFin == null);
+
+
+        if (isValid(dateDebut, dateFin)) {
+
+            StageModel.add(new Stage(nom, dateDebut, dateFin));
+
+        } else {
+
+
 
         }
 
@@ -50,11 +79,19 @@ public class CreationStage implements Runnable{
 
     public LocalDateTime transformDate (String dateRecue){
 
-        LocalDateTime dateReturn;
+        LocalDateTime dateReturn = null;
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        try {
 
-        dateReturn = LocalDateTime.parse(dateRecue, formatter);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+
+            dateReturn = LocalDateTime.parse(dateRecue, formatter);
+
+        }catch (Exception e){
+
+            System.out.println("Votre date ne respecte pas le format demandé");
+
+        }
 
         return dateReturn;
 
@@ -74,6 +111,12 @@ public class CreationStage implements Runnable{
             return valid;
 
         }
+
+    }
+
+    public Boolean isValid(String nomEntree) {
+
+        return StageModel.getStage(nomEntree) == null;
 
     }
 

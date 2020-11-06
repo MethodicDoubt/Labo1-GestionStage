@@ -9,6 +9,7 @@ import be.technifutur.java2020.GestionStage.Menu.MenuFonctionnalite;
 import be.technifutur.java2020.GestionStage.Menu.MenuRole;
 import be.technifutur.java2020.GestionStage.Gestionnaires.GestionnaireFonctionnalite;
 import be.technifutur.java2020.GestionStage.Gestionnaires.GestionnaireRole;
+import be.technifutur.java2020.GestionStage.Modeles.FonctionnaliteModel;
 import be.technifutur.java2020.GestionStage.Primitives.Stage;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class Vue {
     GestionnaireRole roleChoisi;
     GestionnaireFonctionnalite fonctionnaliteChoisie;
     MenuRole roleUser = new MenuRole();
+    FonctionnaliteModel map = new FonctionnaliteModel();
 
     public void afficherMenuRole () {
 
@@ -83,20 +85,7 @@ public class Vue {
         String dateFin;
         int choix;
 
-        switch (fonctionnaliteChoisie){
-
-            case CREATION:
-
-                System.out.println("- CREER UN NOM POUR LE STAGE");
-                nom = scanner.nextLine();
-
-                System.out.println("- CREER UNE DATE DE DEBUT DE STAGE");
-                dateDebut = scanner.nextLine();
-
-                System.out.println("- CREER UNE DATE DE FIN DE STAGE");
-                dateFin = scanner.nextLine();
-
-                CreationStage.run(nom, dateDebut, dateFin);
+        map.getFonctionnalite(fonctionnaliteChoisie).run();
 
                 Iterator<Stage> iterator = GestionnaireStage.getStageList().iterator();
 
@@ -140,7 +129,7 @@ public class Vue {
                 System.out.println("- MODIFIER LA DATE DE FIN DU STAGE");
                 dateFin = scanner.nextLine();
 
-                ModificationStage.setStage(GestionnaireStage.getStageList(), choix, nom, dateDebut, dateFin);
+                ModificationStage.run(GestionnaireStage.getStageList(), choix, nom, dateDebut, dateFin);
 
                 iterator = GestionnaireStage.getStageList().iterator();
 

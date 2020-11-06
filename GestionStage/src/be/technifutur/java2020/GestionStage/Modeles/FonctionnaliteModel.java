@@ -21,4 +21,10 @@ public class FonctionnaliteModel {
 
     }
 
+    public Runnable getFonctionnalite (GestionnaireFonctionnalite g){
+
+        return mapFonctionnalite.get(g);
+
+    }
+
 }

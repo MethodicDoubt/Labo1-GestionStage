@@ -1,21 +1,23 @@
 package be.technifutur.java2020.GestionStage.Fonctionnalites;
 
 import be.technifutur.java2020.GestionStage.Gestionnaires.GestionnaireStage;
+import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import be.technifutur.java2020.GestionStage.Primitives.Stage;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
-public class ModificationStage {
+public class ModificationStage implements Runnable {
 
     //------------------------------------------------------------------------ PROPRIETES
 
-    private List<Stage> stageList = GestionnaireStage.getStageList();
+
 
     //------------------------------------------------------------------------- METHOD
 
-    public static void setStage(List<Stage> stageList, int index, String nom, String dateDebut, String dateFin){
+    public void run(List<Stage> stageList, int index, String nom, LocalDateTime dateDebut, LocalDateTime dateFin){
 
-        stageList.get(index).modifierStage(nom, dateDebut, dateFin);
+        StageModel.StageList.get(index).modifierStage(nom, dateDebut, dateFin);
 
     }
 

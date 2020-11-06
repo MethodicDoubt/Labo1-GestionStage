@@ -19,15 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5910eff8-54bb-4026-bf66-7b9bab8521ab" name="Default Changelist" comment="Premier tour de boucle dans navigation des menus&#10;Résolution problème format date&#10;//Probleme de boucle du menu">
-      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/FonctionnaliteModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Fonctionnalite.java" afterDir="false" />
+    <list default="true" id="5910eff8-54bb-4026-bf66-7b9bab8521ab" name="Default Changelist" comment="Transformation de l'architecture du code.&#10;TOUJOURS EN TRAVAUX&#10;Multiples changements dans les classes et extraction">
+      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Exceptions/InvalidNameException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/CreationStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/CreationStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/InscriptionStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/InscriptionStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Gestionnaires/GestionnaireFonctionnalite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Gestionnaires/GestionnaireFonctionnalite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/ModificationStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/ModificationStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/FonctionnaliteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/FonctionnaliteModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/StageModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/StageModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Stage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Vue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Vue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604566549731</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Transformation de l'architecture du code.&#10;TOUJOURS EN TRAVAUX&#10;Multiples changements dans les classes et extraction">
+      <created>1604669880696</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604669880697</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,13 +160,14 @@
     <MESSAGE value="RETRAVAIL ARCHITECTURE&#10;CREATION STAGE, GESTIONNAIRES, FONCTIONNALITES" />
     <MESSAGE value="CHANGEMENTS MINEURS SUR LA METHODE AFFICHERFONCTIONNALITE&#10;CREATION D UNE CONDITION DE SORTIE&#10;//PROBLEME DE FORMAT DE DATE" />
     <MESSAGE value="Premier tour de boucle dans navigation des menus&#10;Résolution problème format date&#10;//Probleme de boucle du menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Premier tour de boucle dans navigation des menus&#10;Résolution problème format date&#10;//Probleme de boucle du menu" />
+    <MESSAGE value="Transformation de l'architecture du code.&#10;TOUJOURS EN TRAVAUX&#10;Multiples changements dans les classes et extraction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Transformation de l'architecture du code.&#10;TOUJOURS EN TRAVAUX&#10;Multiples changements dans les classes et extraction" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1604564876228">
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1604671123862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604564876228" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604671123862" />
     <state x="693" y="2" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604492003183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -206,10 +212,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604599019233" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604566552646">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604669884352">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604566552646" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604669884352" />
     <state x="736" y="421" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1604479966689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
