@@ -24,40 +24,50 @@ public class ModificationStage implements Runnable {
 
         System.out.println("<La liste des stages>");
 
-        for (int i = 0; i < StageModel.getListStage().size(); i++) {
+        if (!StageModel.getListStage().isEmpty()){
 
-            System.out.println(StageModel.getListStage().get(i).toString());
+            for (int i = 0; i < StageModel.getListStage().size(); i++) {
 
-        }
+                System.out.println(StageModel.getListStage().get(i).toString());
 
-        System.out.println("Entrez le nom du stage que vous voulez modifier");
+            }
 
-        name = scanner.nextLine();
+            System.out.println("Entrez le nom du stage que vous voulez modifier");
 
+            name = scanner.nextLine();
 
+            if (Stage.getStageByName(name) != null) {
 
-        System.out.println(StageModel.getStageByName(name).toString());
+                System.out.println(StageModel.getStageByName(name).toString());
 
-        System.out.println("Entrez le nouveau nom du stage");
+                System.out.println("Entrez le nouveau nom du stage");
 
-        newName = scanner.nextLine();
+                newName = scanner.nextLine();
 
-        System.out.println("Entrez la nouvelle date de début du stage selon le format : jj-mm-aaaa hh:mm");
+                System.out.println("Entrez la nouvelle date de début du stage selon le format : jj-mm-aaaa hh:mm");
 
-        dateDebut = scanner.nextLine();
+                dateDebut = scanner.nextLine();
 
-        System.out.println("Entrez la nouvelle date de fin du stage selon le format : jj-mm-aaaa hh:mm");
+                System.out.println("Entrez la nouvelle date de fin du stage selon le format : jj-mm-aaaa hh:mm");
 
-        dateFin = scanner.nextLine();
+                dateFin = scanner.nextLine();
 
-        StageModel.getStageByName(name).modifierStage(newName, StageModel.getStageByName(name).transformDate(dateDebut),
-                                                        StageModel.getStageByName(name).transformDate(dateFin));
+                StageModel.getStageByName(name).modifierStage(newName, StageModel.getStageByName(name).transformDate(dateDebut),
+                        StageModel.getStageByName(name).transformDate(dateFin));
 
-        System.out.println("Voici la liste des stages");
+                System.out.println("Voici la liste des stages");
 
-        for (int i = 0; i < StageModel.getListStage().size(); i++) {
+                for (int i = 0; i < StageModel.getListStage().size(); i++) {
 
-            System.out.println(StageModel.getListStage().get(i).toString());
+                    System.out.println(StageModel.getListStage().get(i).toString());
+
+                }
+
+            }
+
+        } else {
+
+            System.out.println("Il n'y a pas de stage de prévu");
 
         }
 
