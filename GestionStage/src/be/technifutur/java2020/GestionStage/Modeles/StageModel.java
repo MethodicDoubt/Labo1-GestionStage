@@ -10,7 +10,7 @@ public abstract class StageModel {
 
     private static List<Stage> stageList = new ArrayList<>();
 
-    public List<Stage> getListStage (){
+    public static List<Stage> getListStage (){
 
         return Collections.unmodifiableList(stageList);
 
@@ -23,7 +23,7 @@ public abstract class StageModel {
     }
 
 
-    public static Stage getStage (String nom){
+    public static Stage getStageByName(String nom){
 
         Stage stage = null;
 
@@ -38,6 +38,12 @@ public abstract class StageModel {
         }
 
         return stage;
+
+    }
+
+    public static boolean remove(Stage stage){
+
+        return stageList.remove(stage);
 
     }
 

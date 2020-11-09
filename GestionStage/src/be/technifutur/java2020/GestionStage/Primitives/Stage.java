@@ -67,7 +67,7 @@ public class Stage extends StageModel {
     }
 
 
-    //----------------------------------------------------------------------------- METHODE INTERFACE
+    //----------------------------------------------------------------------------- METHODES
 
     public void modifierStage(String nom, LocalDateTime dateDebut, LocalDateTime dateFin) {
 
@@ -76,6 +76,28 @@ public class Stage extends StageModel {
         setDateFin(dateFin);
 
     }
+
+    public LocalDateTime transformDate (String dateRecue){
+
+        LocalDateTime dateReturn = null;
+
+        try {
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+
+            dateReturn = LocalDateTime.parse(dateRecue, formatter);
+
+        }catch (Exception e){
+
+            System.out.println("Votre date ne respecte pas le format demandé");
+
+        }
+
+        return dateReturn;
+
+    }
+
+    //------------------------------------------------------------------------------- METHODE D'INTERFACE
 
     @Override
     public String toString() {

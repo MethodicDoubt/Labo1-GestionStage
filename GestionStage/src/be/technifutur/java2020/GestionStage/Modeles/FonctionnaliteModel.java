@@ -15,8 +15,8 @@ public class FonctionnaliteModel {
 
         mapFonctionnalite.put(GestionnaireFonctionnalite.CREATION, new CreationStage ());
        // mapFonctionnalite.put(GestionnaireFonctionnalite.INSCRIPTION, new InscriptionStage());
-       // mapFonctionnalite.put(GestionnaireFonctionnalite.MODIFICATION, new ModificationStage());
-       // mapFonctionnalite.put(GestionnaireFonctionnalite.SUPPRESSION, new SuppressionStage());
+        mapFonctionnalite.put(GestionnaireFonctionnalite.MODIFICATION, new ModificationStage());
+        mapFonctionnalite.put(GestionnaireFonctionnalite.SUPPRESSION, new SuppressionStage());
       //  mapFonctionnalite.put(GestionnaireFonctionnalite.RECUPERATION, new RecupererStage());
 
     }
@@ -24,6 +24,12 @@ public class FonctionnaliteModel {
     public Runnable getFonctionnalite (GestionnaireFonctionnalite g){
 
         return mapFonctionnalite.get(g);
+
+    }
+
+    public void addFonctionnalite (GestionnaireFonctionnalite g, Runnable r){
+
+        mapFonctionnalite.put(g, r);
 
     }
 

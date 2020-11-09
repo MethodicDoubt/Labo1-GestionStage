@@ -4,24 +4,25 @@ import be.technifutur.java2020.GestionStage.Gestionnaires.GestionnaireFonctionna
 
 public class MenuFonctionnalite {
 
-    public GestionnaireFonctionnalite gestionnaireFonctionnalite;
+    private GestionnaireFonctionnalite gestionnaireFonctionnalite;
 
-    public void selectionFonctionnalite (int choix) {
+    public void selectionFonctionnalite (String choix) {
 
         switch (choix){
 
-            case 1 : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.CREATION;
+            case "1" : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.CREATION;
                 return;
 
-            case 2 : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.MODIFICATION;
+            case "2" : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.MODIFICATION;
                 return;
 
-            case 3 : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.SUPPRESSION;
+            case "3" : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.SUPPRESSION;
                 return;
 
-            case 4 : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.INSCRIPTION;
+            case "4" : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.INSCRIPTION;
                 return;
 
+            default : gestionnaireFonctionnalite = null;
         }
 
     }

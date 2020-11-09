@@ -9,6 +9,6 @@ public class RecupererStage {
 
     //------------------------------------------------------------------------ PROPRIETES
 
-    private List<Stage> stageList = GestionnaireStage.getStageList();
+
 
 }

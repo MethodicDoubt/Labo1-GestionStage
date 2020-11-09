@@ -1,7 +1,6 @@
 package be.technifutur.java2020.GestionStage.Fonctionnalites;
 
 
-import be.technifutur.java2020.GestionStage.Exceptions.InvalidNameException;
 import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import be.technifutur.java2020.GestionStage.Primitives.Stage;
 
@@ -67,9 +66,13 @@ public class CreationStage implements Runnable{
 
             StageModel.add(new Stage(nom, dateDebut, dateFin));
 
-        } else {
+            System.out.println("<La liste des stages>");
 
+            for (int i = 0; i < StageModel.getListStage().size(); i++) {
 
+                System.out.println(StageModel.getListStage().get(i).toString());
+
+            }
 
         }
 
@@ -116,7 +119,7 @@ public class CreationStage implements Runnable{
 
     public Boolean isValid(String nomEntree) {
 
-        return StageModel.getStage(nomEntree) == null;
+        return StageModel.getStageByName(nomEntree) == null;
 
     }
 
