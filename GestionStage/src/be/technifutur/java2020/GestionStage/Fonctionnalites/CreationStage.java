@@ -3,6 +3,7 @@ package be.technifutur.java2020.GestionStage.Fonctionnalites;
 
 import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import be.technifutur.java2020.GestionStage.Primitives.Stage;
+import be.technifutur.java2020.GestionStage.Utils.DateUtils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -49,15 +50,15 @@ public class CreationStage implements Runnable{
 
         do {
 
-            System.out.println("- CREER UNE DATE DE DEBUT DE STAGE");
-            dateDebut = transformDate(entree.nextLine());
+            System.out.println("- CREER UNE DATE DE DEBUT DE STAGE SELON LE FORMAT : JJ-MM-AAAA HH:MM");
+            dateDebut = DateUtils.transformDate(entree.nextLine());
 
         }while(dateDebut == null);
 
         do {
 
-            System.out.println("- CREER UNE DATE DE FIN DE STAGE");
-            dateFin = transformDate(entree.nextLine());
+            System.out.println("- CREER UNE DATE DE FIN DE STAGE SELON LE FORMAT : JJ-MM-AAAA HH:MM");
+            dateFin = DateUtils.transformDate(entree.nextLine());
 
         }while(dateFin == null);
 
@@ -75,28 +76,6 @@ public class CreationStage implements Runnable{
             }
 
         }
-
-    }
-
-    //TRANSFORMATION DES STRING EN LOCALDATETIME
-
-    public LocalDateTime transformDate (String dateRecue){
-
-        LocalDateTime dateReturn = null;
-
-        try {
-
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-
-            dateReturn = LocalDateTime.parse(dateRecue, formatter);
-
-        }catch (Exception e){
-
-            System.out.println("Votre date ne respecte pas le format demandé");
-
-        }
-
-        return dateReturn;
 
     }
 

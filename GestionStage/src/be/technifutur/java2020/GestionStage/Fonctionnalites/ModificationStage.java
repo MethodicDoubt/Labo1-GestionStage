@@ -3,6 +3,7 @@ package be.technifutur.java2020.GestionStage.Fonctionnalites;
 
 import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import be.technifutur.java2020.GestionStage.Primitives.Stage;
+import be.technifutur.java2020.GestionStage.Utils.DateUtils;
 
 import java.util.Scanner;
 
@@ -52,8 +53,8 @@ public class ModificationStage implements Runnable {
 
                 dateFin = scanner.nextLine();
 
-                StageModel.getStageByName(name).modifierStage(newName, StageModel.getStageByName(name).transformDate(dateDebut),
-                        StageModel.getStageByName(name).transformDate(dateFin));
+                StageModel.getStageByName(name).modifierStage(newName, DateUtils.transformDate(dateDebut),
+                        DateUtils.transformDate(dateFin));
 
                 System.out.println("Voici la liste des stages");
 

@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.Date;
+import java.util.Locale;
 
 public class Stage extends StageModel {
 
@@ -16,17 +17,36 @@ public class Stage extends StageModel {
     private LocalDateTime dateDebut;
     private LocalDateTime dateFin;
 
+    private String dateDebutFormat;
+    private String dateFinFormat;
+
     //------------------------------------------------------------------------ SETTER
 
     private void setDateDebut (LocalDateTime dateRecue){
 
-        this.dateDebut = dateRecue;
+        if (dateRecue != null) {
+
+            this.dateDebut = dateRecue;
+
+        }else {
+
+            this.dateDebut = null;
+
+        }
 
     }
 
     private void setDateFin (LocalDateTime dateRecue){
 
-        this.dateFin = dateRecue;
+        if (dateRecue != null) {
+
+            this.dateFin = dateRecue;
+
+        }else {
+
+            this.dateFin = null;
+
+        }
 
     }
 
@@ -77,23 +97,14 @@ public class Stage extends StageModel {
 
     }
 
-    public LocalDateTime transformDate (String dateRecue){
+    public void stringification (){
 
-        LocalDateTime dateReturn = null;
+        if (dateDebut != null && dateFin != null) {
 
-        try {
-
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-
-            dateReturn = LocalDateTime.parse(dateRecue, formatter);
-
-        }catch (Exception e){
-
-            System.out.println("Votre date ne respecte pas le format demandé");
+            this.dateDebutFormat = this.dateDebut.format(DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm", Locale.FRENCH));
+            this.dateFinFormat = this.dateFin.format(DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm", Locale.FRENCH));
 
         }
-
-        return dateReturn;
 
     }
 
@@ -104,7 +115,12 @@ public class Stage extends StageModel {
 
         String chaine;
 
-        chaine = "Nom du Stage : " + this.nom + " /  Date de début du stage : " + dateDebut.toString() + " /  Date de fin du stage : " + dateFin.toString();
+        stringification();
+
+        chaine = "---------------------------------------------------------------------------------------------------------------------------------" +
+                "\n" +
+                "Nom du Stage : " + this.nom + "\n" + "Date de début du stage : " + dateDebutFormat + " \n" + "Date de fin du stage : " + dateFinFormat
+                + "\n" + "------------------------------------------------------------------------------------------------------------------------------";
 
         return chaine;
 

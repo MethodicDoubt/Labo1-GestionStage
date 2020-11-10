@@ -14,27 +14,35 @@ public class SuppressionStage implements Runnable{
         String name;
         Stage stageToRemoved;
 
-        System.out.println("<Voici la liste des stages>");
+        if (!StageModel.getListStage().isEmpty()) {
 
-        for (int i = 0; i < StageModel.getListStage().size(); i++) {
+            System.out.println("<Voici la liste des stages>");
 
-            System.out.println(StageModel.getListStage().get(i).toString());
+            for (int i = 0; i < StageModel.getListStage().size(); i++) {
 
-        }
+                System.out.println(StageModel.getListStage().get(i).toString());
 
-        System.out.println("Entrez le nom du stage que vous voulez supprimer");
+            }
 
-        name = scanner.nextLine();
+            System.out.println("Entrez le nom du stage que vous voulez supprimer");
 
-        stageToRemoved = StageModel.getStageByName(name);
+            name = scanner.nextLine();
 
-        StageModel.remove(stageToRemoved);
+            stageToRemoved = StageModel.getStageByName(name);
 
-        System.out.println("<Voici la nouvelle liste des stages>");
+            StageModel.remove(stageToRemoved);
 
-        for (int i = 0; i < StageModel.getListStage().size(); i++) {
+            System.out.println("<Voici la nouvelle liste des stages>");
 
-            System.out.println(StageModel.getListStage().get(i).toString());
+            for (int i = 0; i < StageModel.getListStage().size(); i++) {
+
+                System.out.println(StageModel.getListStage().get(i).toString());
+
+            }
+
+        } else {
+
+            System.out.println("Il n'y a pas de stage de programmé pour le moment");
 
         }
 
