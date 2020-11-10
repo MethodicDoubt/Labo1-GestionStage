@@ -19,16 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5910eff8-54bb-4026-bf66-7b9bab8521ab" name="Default Changelist" comment="Erreurs contrôlées.&#10;&#10;Peut être d'autres erreurs cachées ?">
-      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Utils/DateUtils.java" afterDir="false" />
+    <list default="true" id="5910eff8-54bb-4026-bf66-7b9bab8521ab" name="Default Changelist" comment="Corrections de nouvelles erreurs.&#10;&#10;Passage à la suite du labo &#10;--&gt; Ajout d'activités">
+      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SelectionnerSousFonctionnalites/AjouterActivite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SelectionnerSousFonctionnalites/ModifierActivite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SelectionnerSousFonctionnalites/RetirerActivite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Gestionnaires/GestionnaireSelectionnerSousFonctionnalite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/ActionStage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/SelectionnerSousFonctionnaliteModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Activite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Fonctionnalites/CreationStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Fonctionnalites/CreationStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Fonctionnalites/SuppressionStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Fonctionnalites/SuppressionStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Primitives/Stage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Primitives/Stage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/CreationStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/CreationStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/ModificationStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/ModificationStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SuppressionStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SuppressionStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Fonctionnalites/ModificationStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Fonctionnalites/ModificationStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/RecupererStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SéléctionnerStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/FonctionnaliteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/FonctionnaliteModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Stage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +43,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -163,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604936730597</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Corrections de nouvelles erreurs.&#10;&#10;Passage à la suite du labo &#10;--&gt; Ajout d'activités">
+      <created>1604999009973</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1604999009973</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,13 +198,14 @@
     <MESSAGE value="Transformation de l'architecture du code (suite)&#10;TOUJOURS EN TRAVAUX&#10;Fin CreationStage&#10;Avancée FonctionnaliteModel, StageModel" />
     <MESSAGE value="Fin changement architecture&#10;Vue/Controler/Model&#10;&#10;Debut control erreurs&#10;&#10;//Continuer les contrôles d'erreurs" />
     <MESSAGE value="Erreurs contrôlées.&#10;&#10;Peut être d'autres erreurs cachées ?" />
-    <option name="LAST_COMMIT_MESSAGE" value="Erreurs contrôlées.&#10;&#10;Peut être d'autres erreurs cachées ?" />
+    <MESSAGE value="Corrections de nouvelles erreurs.&#10;&#10;Passage à la suite du labo &#10;--&gt; Ajout d'activités" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrections de nouvelles erreurs.&#10;&#10;Passage à la suite du labo &#10;--&gt; Ajout d'activités" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1604911370370">
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1605014380108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604911370370" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605014380108" />
     <state x="693" y="2" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604929906842">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -239,10 +250,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604938410601" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604936737464">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604999014982">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604936737464" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604999014982" />
     <state x="736" y="421" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1604479966689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

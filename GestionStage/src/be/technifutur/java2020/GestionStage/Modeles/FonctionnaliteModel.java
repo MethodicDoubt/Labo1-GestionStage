@@ -17,7 +17,7 @@ public class FonctionnaliteModel {
        // mapFonctionnalite.put(GestionnaireFonctionnalite.INSCRIPTION, new InscriptionStage());
         mapFonctionnalite.put(GestionnaireFonctionnalite.MODIFICATION, new ModificationStage());
         mapFonctionnalite.put(GestionnaireFonctionnalite.SUPPRESSION, new SuppressionStage());
-      //  mapFonctionnalite.put(GestionnaireFonctionnalite.RECUPERATION, new RecupererStage());
+      //  mapFonctionnalite.put(GestionnaireFonctionnalite.RECUPERATION, new SéléctionnerStage());
 
     }
 

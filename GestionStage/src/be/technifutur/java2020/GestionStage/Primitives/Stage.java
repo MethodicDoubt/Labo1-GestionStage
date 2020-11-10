@@ -5,8 +5,7 @@ import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.Date;
-import java.util.Locale;
+import java.util.*;
 
 public class Stage extends StageModel {
 
@@ -19,6 +18,8 @@ public class Stage extends StageModel {
 
     private String dateDebutFormat;
     private String dateFinFormat;
+
+    private HashMap<String, Activite> mapActivite;
 
     //------------------------------------------------------------------------ SETTER
 
@@ -76,6 +77,12 @@ public class Stage extends StageModel {
 
     }
 
+    public Map<String, Activite> getMapActivite (){
+
+        return Collections.unmodifiableMap(mapActivite);
+
+    }
+
     //----------------------------------------------------------------------- CONSTRUCTEUR
 
     public Stage(String nom, LocalDateTime dateDebut, LocalDateTime dateFin) {
@@ -83,6 +90,7 @@ public class Stage extends StageModel {
         setNom(nom);
         setDateDebut(dateDebut);
         setDateFin(dateFin);
+        mapActivite = new HashMap<>();
 
     }
 
@@ -105,6 +113,12 @@ public class Stage extends StageModel {
             this.dateFinFormat = this.dateFin.format(DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm", Locale.FRENCH));
 
         }
+
+    }
+
+    public void addActivite (Activite a){
+
+        this.mapActivite.put(a.getName(), a);
 
     }
 
