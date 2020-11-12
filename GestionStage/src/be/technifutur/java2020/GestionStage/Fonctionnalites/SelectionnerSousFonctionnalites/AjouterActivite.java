@@ -1,6 +1,6 @@
 package be.technifutur.java2020.GestionStage.Fonctionnalites.SelectionnerSousFonctionnalites;
 
-import be.technifutur.java2020.GestionStage.Fonctionnalites.SéléctionnerStage;
+import be.technifutur.java2020.GestionStage.Fonctionnalites.SelectionnerStage;
 import be.technifutur.java2020.GestionStage.Modeles.ActionStage;
 import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import be.technifutur.java2020.GestionStage.Primitives.Activite;
@@ -9,7 +9,7 @@ import be.technifutur.java2020.GestionStage.Utils.DateUtils;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.temporal.TemporalUnit;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class AjouterActivite implements ActionStage {
@@ -58,20 +58,26 @@ public class AjouterActivite implements ActionStage {
         do {
 
             System.out.println("- Entrez la durée de l'activité en minutes");
-            duree = Duration.ofMinutes(Long.getLong(entree.nextLine()));
+            duree = Duration.ofMinutes(Long.parseLong(entree.nextLine()));
 
         }while(duree == null);
 
 
         if (isValid(dateDebut, duree)) {
 
-            Stage.addActivite(new Activite(nom, dateDebut, duree));
+            stageSelectionne.addActivite(new Activite(nom, dateDebut, duree));
 
             System.out.println("<La liste des stages>");
 
             for (int i = 0; i < StageModel.getListStage().size(); i++) {
 
                 System.out.println(StageModel.getListStage().get(i).toString());
+
+                for (Activite a : stageSelectionne.getMapActivite().values()) {
+
+                    System.out.println(a.afficherActivite());
+
+                }
 
             }
 
@@ -98,7 +104,7 @@ public class AjouterActivite implements ActionStage {
 
     public Boolean isValid(String nomEntree) {
 
-        return StageModel.getStageByName(nomEntree) == null;
+        return stageSelectionne.getActiviteByName(nomEntree) == null;
 
     }
 

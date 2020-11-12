@@ -19,19 +19,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5910eff8-54bb-4026-bf66-7b9bab8521ab" name="Default Changelist" comment="Corrections de nouvelles erreurs.&#10;&#10;Passage à la suite du labo &#10;--&gt; Ajout d'activités">
-      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SelectionnerSousFonctionnalites/AjouterActivite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SelectionnerSousFonctionnalites/ModifierActivite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SelectionnerSousFonctionnalites/RetirerActivite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Gestionnaires/GestionnaireSelectionnerSousFonctionnalite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/ActionStage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/SelectionnerSousFonctionnaliteModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Activite.java" afterDir="false" />
+    <list default="true" id="5910eff8-54bb-4026-bf66-7b9bab8521ab" name="Default Changelist" comment="Creation des activites&#10;Modification de la class Stage&#10;&#10;Ajout de Sub-fonctionnalites&#10;&#10;//NEED : Ajout Menu sous-fonctionnalites&#10;         Continuer process activites">
+      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Menu/MenuSelectionnerSousFonctionnalite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Vues/VueMenuSelectionnerSousFonctionnalite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Fonctionnalites/ModificationStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Fonctionnalites/ModificationStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/RecupererStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SéléctionnerStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Controler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Controler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Fonctionnalites/RecupererStage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Gestionnaires/GestionnaireFonctionnalite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Gestionnaires/GestionnaireFonctionnalite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Menu/MenuFonctionnalite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Menu/MenuFonctionnalite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Primitives/Stage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GestionStage/be/technifutur/java2020/GestionStage/Primitives/Stage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Controler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Controler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SelectionnerSousFonctionnalites/AjouterActivite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SelectionnerSousFonctionnalites/AjouterActivite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SéléctionnerStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Fonctionnalites/SelectionnerStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Gestionnaires/GestionnaireFonctionnalite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Gestionnaires/GestionnaireFonctionnalite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Menu/MenuFonctionnalite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Menu/MenuFonctionnalite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/FonctionnaliteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/FonctionnaliteModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/SelectionnerSousFonctionnaliteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Modeles/SelectionnerSousFonctionnaliteModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Activite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Activite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Primitives/Stage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Vues/VueMenuFonctionnalite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/technifutur/java2020/GestionStage/Vues/VueMenuFonctionnalite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +48,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -58,7 +64,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../sudoku2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../test" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -173,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604999009973</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Creation des activites&#10;Modification de la class Stage&#10;&#10;Ajout de Sub-fonctionnalites&#10;&#10;//NEED : Ajout Menu sous-fonctionnalites&#10;         Continuer process activites">
+      <created>1605015312749</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1605015312749</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,7 +213,8 @@
     <MESSAGE value="Fin changement architecture&#10;Vue/Controler/Model&#10;&#10;Debut control erreurs&#10;&#10;//Continuer les contrôles d'erreurs" />
     <MESSAGE value="Erreurs contrôlées.&#10;&#10;Peut être d'autres erreurs cachées ?" />
     <MESSAGE value="Corrections de nouvelles erreurs.&#10;&#10;Passage à la suite du labo &#10;--&gt; Ajout d'activités" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrections de nouvelles erreurs.&#10;&#10;Passage à la suite du labo &#10;--&gt; Ajout d'activités" />
+    <MESSAGE value="Creation des activites&#10;Modification de la class Stage&#10;&#10;Ajout de Sub-fonctionnalites&#10;&#10;//NEED : Ajout Menu sous-fonctionnalites&#10;         Continuer process activites" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creation des activites&#10;Modification de la class Stage&#10;&#10;Ajout de Sub-fonctionnalites&#10;&#10;//NEED : Ajout Menu sous-fonctionnalites&#10;         Continuer process activites" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1605014380108">
@@ -214,26 +229,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604930582501" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1604597173327">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1605171990313">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604597173327" />
-    <state width="1877" height="362" key="GridCell.Tab.0.bottom" timestamp="1604998931887">
+    <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605171990313" />
+    <state width="1877" height="362" key="GridCell.Tab.0.bottom" timestamp="1605173553969">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="362" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604998931887" />
-    <state width="1877" height="362" key="GridCell.Tab.0.center" timestamp="1604998931887">
+    <state width="1877" height="362" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605173553969" />
+    <state width="1877" height="362" key="GridCell.Tab.0.center" timestamp="1605173553969">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="362" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604998931887" />
-    <state width="1877" height="362" key="GridCell.Tab.0.left" timestamp="1604998931887">
+    <state width="1877" height="362" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605173553969" />
+    <state width="1877" height="362" key="GridCell.Tab.0.left" timestamp="1605173553969">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="362" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604998931887" />
-    <state width="1877" height="362" key="GridCell.Tab.0.right" timestamp="1604998931887">
+    <state width="1877" height="362" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605173553969" />
+    <state width="1877" height="362" key="GridCell.Tab.0.right" timestamp="1605173553969">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="362" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604998931887" />
+    <state width="1877" height="362" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605173553969" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1604938410601">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -250,10 +265,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604938410601" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604999014982">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1605172686862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1604999014982" />
+    <state x="461" y="165" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605172686862" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605015323208">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605015323208" />
     <state x="736" y="421" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1604479966689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -122,6 +122,16 @@ public class Stage extends StageModel {
 
     }
 
+    public Activite getActiviteByName (String s){
+
+        Activite activite;
+
+        activite = this.getMapActivite().get(s);
+
+        return activite;
+
+    }
+
     //------------------------------------------------------------------------------- METHODE D'INTERFACE
 
     @Override
@@ -139,4 +149,5 @@ public class Stage extends StageModel {
         return chaine;
 
     }
+
 }

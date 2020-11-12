@@ -75,7 +75,13 @@ public class Controler implements Runnable {
 
             Runnable fonctionnalite = map.getFonctionnalite(fonctionnaliteChoisie);
 
-            if (fonctionnalite != null){
+            if (fonctionnalite != null && fonctionnaliteChoisie != GestionnaireFonctionnalite.SELECTION){
+
+                fonctionnalite.run();
+
+            }
+
+            if (fonctionnalite != null && fonctionnaliteChoisie == GestionnaireFonctionnalite.SELECTION){
 
                 fonctionnalite.run();
 
