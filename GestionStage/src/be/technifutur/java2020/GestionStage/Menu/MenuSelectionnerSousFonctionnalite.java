@@ -15,11 +15,11 @@ public class MenuSelectionnerSousFonctionnalite {
                 return;
 
             case "2":
-                this.gestionnaireSelectionnerSousFonctionnalite = GestionnaireSelectionnerSousFonctionnalite.RETIRER;
+                this.gestionnaireSelectionnerSousFonctionnalite = GestionnaireSelectionnerSousFonctionnalite.MODIFIER;
                 return;
 
             case "3":
-                this.gestionnaireSelectionnerSousFonctionnalite = GestionnaireSelectionnerSousFonctionnalite.MODIFIER;
+                this.gestionnaireSelectionnerSousFonctionnalite = GestionnaireSelectionnerSousFonctionnalite.RETIRER;
                 return;
 
             default:

@@ -13,10 +13,11 @@ public class FonctionnaliteModel {
     public FonctionnaliteModel() {
 
         mapFonctionnalite.put(GestionnaireFonctionnalite.CREATION, new CreationStage ());
-       // mapFonctionnalite.put(GestionnaireFonctionnalite.INSCRIPTION, new InscriptionStage());
+        mapFonctionnalite.put(GestionnaireFonctionnalite.INSCRIPTION, new InscriptionStage());
         mapFonctionnalite.put(GestionnaireFonctionnalite.MODIFICATION, new ModificationStage());
         mapFonctionnalite.put(GestionnaireFonctionnalite.SUPPRESSION, new SuppressionStage());
         mapFonctionnalite.put(GestionnaireFonctionnalite.SELECTION, new SelectionnerStage());
+        mapFonctionnalite.put(GestionnaireFonctionnalite.AFFICHAGE, new AfficherStage());
 
     }
 

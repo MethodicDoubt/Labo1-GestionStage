@@ -2,12 +2,13 @@ package be.technifutur.java2020.GestionStage.Primitives;
 
 import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.*;
 
-public class Stage extends StageModel {
+public class Stage extends StageModel implements Serializable {
 
     //---------------------------------------------------------------------- PROPRIETES
 
@@ -129,6 +130,12 @@ public class Stage extends StageModel {
         activite = this.getMapActivite().get(s);
 
         return activite;
+
+    }
+
+    public void remove(String s){
+
+        mapActivite.remove(s);
 
     }
 

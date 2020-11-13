@@ -1,15 +1,18 @@
 package be.technifutur.java2020.GestionStage.Fonctionnalites;
 
 
+import be.technifutur.java2020.GestionStage.DB.BaseDeDonnees;
 import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import be.technifutur.java2020.GestionStage.Primitives.Stage;
 import be.technifutur.java2020.GestionStage.Utils.DateUtils;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class CreationStage implements Runnable{
+public class CreationStage implements Runnable {
 
     //------------------------------------------------------------------------ PROPRIETES
 
@@ -17,7 +20,7 @@ public class CreationStage implements Runnable{
 
     //------------------------------------------------------------------------- METHOD
     @Override
-    public void run(){
+    public void run() {
 
         String nom;
         LocalDateTime dateDebut;
@@ -39,28 +42,28 @@ public class CreationStage implements Runnable{
             System.out.println("- CREER UN NOM POUR LE STAGE");
             nom = entree.nextLine();
 
-            if(!isValid((nom))){
+            if (!isValid((nom))) {
 
                 valid = false;
                 System.out.println("Nom de stage déjà utilisé");
 
             }
 
-        }while(!valid);
+        } while (!valid);
 
         do {
 
             System.out.println("- CREER UNE DATE DE DEBUT DE STAGE SELON LE FORMAT : JJ-MM-AAAA HH:MM");
             dateDebut = DateUtils.transformDate(entree.nextLine());
 
-        }while(dateDebut == null);
+        } while (dateDebut == null);
 
         do {
 
             System.out.println("- CREER UNE DATE DE FIN DE STAGE SELON LE FORMAT : JJ-MM-AAAA HH:MM");
             dateFin = DateUtils.transformDate(entree.nextLine());
 
-        }while(dateFin == null);
+        } while (dateFin == null);
 
 
         if (isValid(dateDebut, dateFin)) {
@@ -79,7 +82,7 @@ public class CreationStage implements Runnable{
 
     }
 
-    public Boolean isValid(LocalDateTime dateDebut, LocalDateTime dateFin){
+    public Boolean isValid(LocalDateTime dateDebut, LocalDateTime dateFin) {
 
         Boolean valid = false;
 
@@ -88,7 +91,7 @@ public class CreationStage implements Runnable{
             valid = true;
             return valid;
 
-        }else {
+        } else {
 
             return valid;
 

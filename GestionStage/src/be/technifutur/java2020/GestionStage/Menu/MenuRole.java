@@ -25,6 +25,10 @@ public class MenuRole {
             case "5" : this.roleChoisi = GestionnaireRole.SECRETARIAT;
             return;
 
+            case "6" : this.roleChoisi = GestionnaireRole.VISITEUR;
+            return;
+
+            default : this.roleChoisi = GestionnaireRole.VISITEUR;
         }
 
     }

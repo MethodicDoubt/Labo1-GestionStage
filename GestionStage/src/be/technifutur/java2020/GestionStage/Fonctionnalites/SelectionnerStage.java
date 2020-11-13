@@ -59,6 +59,8 @@ public class SelectionnerStage implements Runnable {
 
                 sousFonctionnalite.run();
 
+                StageModel.Sauvegarde();
+
                 vueMenuSelectionnerSousFonctionnalite.afficherMenuSelectionnerSousFonctionnalite();
 
             }

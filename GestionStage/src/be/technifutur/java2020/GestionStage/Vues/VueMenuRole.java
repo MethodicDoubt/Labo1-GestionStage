@@ -5,11 +5,12 @@ public class VueMenuRole {
     public void afficherMenuRole() {
 
         System.out.println("Veuillez sélectionner un rôle en indiquant le numéro correspondant à :");
-        System.out.println("- PARTICIPANT(1)");
-        System.out.println("- INSCRIT(2)");
-        System.out.println("- ORGANISATEUR(3)");
-        System.out.println("- TRESORIER(4)");
-        System.out.println("- SECRETARIAT(5)");
+        System.out.println("1 - PARTICIPANT");
+        System.out.println("2 - INSCRIT");
+        System.out.println("3 - ORGANISATEUR");
+        System.out.println("4 - TRESORIER");
+        System.out.println("5 - SECRETARIAT");
+        System.out.println("6 - VISITEUR");
 
     }
 

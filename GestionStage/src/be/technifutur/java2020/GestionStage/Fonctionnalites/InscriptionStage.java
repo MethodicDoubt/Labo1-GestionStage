@@ -5,5 +5,7 @@ public class InscriptionStage implements Runnable{
     @Override
     public void run() {
 
+
+
     }
 }

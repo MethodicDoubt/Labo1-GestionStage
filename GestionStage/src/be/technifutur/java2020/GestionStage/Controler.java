@@ -5,6 +5,7 @@ import be.technifutur.java2020.GestionStage.Gestionnaires.GestionnaireRole;
 import be.technifutur.java2020.GestionStage.Menu.MenuFonctionnalite;
 import be.technifutur.java2020.GestionStage.Menu.MenuRole;
 import be.technifutur.java2020.GestionStage.Modeles.FonctionnaliteModel;
+import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import be.technifutur.java2020.GestionStage.Vues.VueMenuFonctionnalite;
 import be.technifutur.java2020.GestionStage.Vues.VueMenuRole;
 
@@ -24,13 +25,13 @@ public class Controler implements Runnable {
 
     //--------------------------------------------------------------------- Setting des vues
 
-    public void setVueMenuRole (VueMenuRole vue){
+    public void setVueMenuRole(VueMenuRole vue) {
 
-         this.vueMenuRole = vue;
+        this.vueMenuRole = vue;
 
     }
 
-    public void setVueMenuFonctionnalite(VueMenuFonctionnalite vue){
+    public void setVueMenuFonctionnalite(VueMenuFonctionnalite vue) {
 
         this.vueMenuFonctionnalite = vue;
 
@@ -42,10 +43,7 @@ public class Controler implements Runnable {
         Scanner scanner = new Scanner(System.in);
 
 
-
         vueMenuRole.afficherMenuRole(); //---------------------------- AFFICHER LA VUE
-
-
 
         choix = scanner.nextLine();
 
@@ -55,41 +53,132 @@ public class Controler implements Runnable {
 
         choix = "";
 
-        //---------------------------------------
+        StageModel.load();
+
+        switch (roleChoisi){
+
+            case VISITEUR:
+
+                vueMenuFonctionnalite.afficherMenuFonctionnalite(); //-------- AFFICHER LA VUE
+
+                StageModel.load();
+
+                String input = scanner.nextLine();
+
+                while (!input.equals("q")) {
+
+                    choix = input;
+
+                    menuFonctionnalite.selectionFonctionnalite(choix);
+
+                    this.fonctionnaliteChoisie = menuFonctionnalite.getFonctionnaliteChoisie();
+
+                    Runnable fonctionnalite = map.getFonctionnalite(fonctionnaliteChoisie);
+
+                    switch (fonctionnaliteChoisie){
+
+                        case AFFICHAGE: fonctionnalite.run();
+                        break;
+
+                        case INSCRIPTION: fonctionnalite.run();
+                        break;
+
+                        default:
+                            System.out.println("Vous n'avez pas le niveau d'accès requis pour accéder à ces actions.");
+
+                    }
 
 
+                    vueMenuFonctionnalite.afficherMenuFonctionnalite();
 
-        vueMenuFonctionnalite.afficherMenuFonctionnalite(); //-------- AFFICHER LA VUE
+                    input = scanner.nextLine();
 
+                }
+            break;
 
+            case ORGANISATEUR:
 
-        String input = scanner.nextLine();
+                vueMenuFonctionnalite.afficherMenuFonctionnalite(); //-------- AFFICHER LA VUE
 
-        while (!input.equals("q")) {
+                input = scanner.nextLine();
 
-            choix = input;
+                while (!input.equals("q")) {
 
-            menuFonctionnalite.selectionFonctionnalite(choix);
+                    choix = input;
 
-            this.fonctionnaliteChoisie = menuFonctionnalite.getFonctionnaliteChoisie();
+                    menuFonctionnalite.selectionFonctionnalite(choix);
 
-            Runnable fonctionnalite = map.getFonctionnalite(fonctionnaliteChoisie);
+                    this.fonctionnaliteChoisie = menuFonctionnalite.getFonctionnaliteChoisie();
 
-            if (fonctionnalite != null && fonctionnaliteChoisie != GestionnaireFonctionnalite.SELECTION){
+                    Runnable fonctionnalite = map.getFonctionnalite(fonctionnaliteChoisie);
 
-                fonctionnalite.run();
+                    if (fonctionnalite != null && fonctionnaliteChoisie != GestionnaireFonctionnalite.SELECTION) {
 
-            }
+                        fonctionnalite.run();
 
-            if (fonctionnalite != null && fonctionnaliteChoisie == GestionnaireFonctionnalite.SELECTION){
+                        StageModel.Sauvegarde();
 
-                fonctionnalite.run();
+                    }
 
-            }
+                    if (fonctionnalite != null && fonctionnaliteChoisie == GestionnaireFonctionnalite.SELECTION) {
 
-            vueMenuFonctionnalite.afficherMenuFonctionnalite();
+                        fonctionnalite.run();
 
-            input = scanner.nextLine();
+                    }
+
+                    vueMenuFonctionnalite.afficherMenuFonctionnalite();
+
+                    input = scanner.nextLine();
+
+                }
+                break;
+
+            case PARTICIPANT:
+
+                vueMenuFonctionnalite.afficherMenuFonctionnalite(); //-------- AFFICHER LA VUE
+
+                StageModel.load();
+
+                input = scanner.nextLine();
+
+                while (!input.equals("q")) {
+
+                    choix = input;
+
+                    menuFonctionnalite.selectionFonctionnalite(choix);
+
+                    this.fonctionnaliteChoisie = menuFonctionnalite.getFonctionnaliteChoisie();
+
+                    Runnable fonctionnalite = map.getFonctionnalite(fonctionnaliteChoisie);
+
+                    switch (fonctionnaliteChoisie){
+
+                        case AFFICHAGE: fonctionnalite.run();
+                            break;
+
+                        case INSCRIPTION: fonctionnalite.run();
+                            break;
+
+                        default:
+                            System.out.println("Vous n'avez pas le niveau d'accès requis pour accéder à ces actions.");
+
+                    }
+
+                    vueMenuFonctionnalite.afficherMenuFonctionnalite();
+
+                    input = scanner.nextLine();
+
+                }
+            break;
+
+            case TRESORIER: ;
+            break;
+
+            case SECRETARIAT: ;
+            break;
+
+            case INSCRIT: ;
+            break;
 
         }
 

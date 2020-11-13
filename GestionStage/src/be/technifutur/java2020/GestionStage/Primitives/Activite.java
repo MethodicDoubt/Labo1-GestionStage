@@ -1,10 +1,11 @@
 package be.technifutur.java2020.GestionStage.Primitives;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class Activite {
+public class Activite implements Serializable {
 
     //--------------------------------------------------------------------------- PROPRIETES
 
@@ -59,6 +60,14 @@ public class Activite {
     public void setDuree(Duration duree) {
 
         this.duree = duree;
+
+    }
+
+    public void modifierActivite (String s, LocalDateTime l, Duration d){
+
+        this.name = s;
+        this.dateDebut = l;
+        this.duree = d;
 
     }
 

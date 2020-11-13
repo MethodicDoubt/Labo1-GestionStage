@@ -25,6 +25,9 @@ public class MenuFonctionnalite {
             case "5" : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.SELECTION;
                 return;
 
+            case "6" : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.AFFICHAGE;
+                return;
+
             default : gestionnaireFonctionnalite = null;
         }
 
