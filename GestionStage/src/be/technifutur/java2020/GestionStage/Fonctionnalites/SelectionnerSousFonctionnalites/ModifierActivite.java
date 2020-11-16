@@ -1,17 +1,16 @@
 package be.technifutur.java2020.GestionStage.Fonctionnalites.SelectionnerSousFonctionnalites;
 
-import be.technifutur.java2020.GestionStage.Modeles.ActionStage;
-import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import be.technifutur.java2020.GestionStage.Primitives.Activite;
 import be.technifutur.java2020.GestionStage.Primitives.Stage;
+import be.technifutur.java2020.GestionStage.User.User;
 import be.technifutur.java2020.GestionStage.Utils.DateUtils;
 import be.technifutur.java2020.GestionStage.Utils.DurationUtils;
 
 import java.util.Scanner;
 
-public class ModifierActivite implements ActionStage {
+public class ModifierActivite implements Runnable {
 
-    private Stage stageSelectionne;
+    private User user;
 
     @Override
     public void run() {
@@ -24,9 +23,9 @@ public class ModifierActivite implements ActionStage {
 
         System.out.println("<La liste des activités>");
 
-        if (!stageSelectionne.getMapActivite().isEmpty()){
+        if (!user.getStageSelectionne().getMapActivite().isEmpty()){
 
-            for (Activite a : stageSelectionne.getMapActivite().values()) {
+            for (Activite a : user.getStageSelectionne().getMapActivite().values()) {
 
                 System.out.println(a.afficherActivite());
 
@@ -36,9 +35,9 @@ public class ModifierActivite implements ActionStage {
 
             name = scanner.nextLine();
 
-            if (stageSelectionne.getActiviteByName(name) != null) {
+            if (user.getStageSelectionne().getActiviteByName(name) != null) {
 
-                System.out.println("Activité sélectionnée : " + stageSelectionne.getActiviteByName(name).afficherActivite());
+                System.out.println("Activité sélectionnée : " + user.getStageSelectionne().getActiviteByName(name).afficherActivite());
 
                 System.out.println("Entrez le nouveau nom de l'activité");
 
@@ -52,11 +51,11 @@ public class ModifierActivite implements ActionStage {
 
                 duree = scanner.nextLine();
 
-                stageSelectionne.getActiviteByName(name).modifierActivite(newName, DateUtils.transformDate(dateDebut), DurationUtils.transformDuration(duree));
+                user.getStageSelectionne().getActiviteByName(name).modifierActivite(newName, DateUtils.transformDate(dateDebut), DurationUtils.transformDuration(duree));
 
                 System.out.println("Voici la liste des activités");
 
-                for (Activite a : stageSelectionne.getMapActivite().values()) {
+                for (Activite a : user.getStageSelectionne().getMapActivite().values()) {
 
                     System.out.println(a.afficherActivite());
 
@@ -72,8 +71,9 @@ public class ModifierActivite implements ActionStage {
 
     }
 
-    public void setStage(Stage stageSelectionne) {
-        this.stageSelectionne = stageSelectionne;
-    }
+    public ModifierActivite(User user) {
 
+        this.user = user;
+
+    }
 }

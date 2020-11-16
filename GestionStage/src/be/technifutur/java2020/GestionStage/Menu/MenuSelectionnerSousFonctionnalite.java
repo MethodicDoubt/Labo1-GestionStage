@@ -22,6 +22,14 @@ public class MenuSelectionnerSousFonctionnalite {
                 this.gestionnaireSelectionnerSousFonctionnalite = GestionnaireSelectionnerSousFonctionnalite.RETIRER;
                 return;
 
+            case "4":
+                this.gestionnaireSelectionnerSousFonctionnalite = GestionnaireSelectionnerSousFonctionnalite.INSCRIPTIONSTAGE;
+                return;
+
+            case "5":
+                this.gestionnaireSelectionnerSousFonctionnalite = GestionnaireSelectionnerSousFonctionnalite.INSCRIPTIONACTIVITE;
+                return;
+
             default:
                 gestionnaireSelectionnerSousFonctionnalite = null;
         }

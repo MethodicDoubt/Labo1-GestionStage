@@ -4,6 +4,7 @@ package be.technifutur.java2020.GestionStage.Fonctionnalites;
 import be.technifutur.java2020.GestionStage.DB.BaseDeDonnees;
 import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import be.technifutur.java2020.GestionStage.Primitives.Stage;
+import be.technifutur.java2020.GestionStage.User.User;
 import be.technifutur.java2020.GestionStage.Utils.DateUtils;
 
 import java.io.File;
@@ -16,7 +17,7 @@ public class CreationStage implements Runnable {
 
     //------------------------------------------------------------------------ PROPRIETES
 
-
+    private User user;
 
     //------------------------------------------------------------------------- METHOD
     @Override
@@ -105,4 +106,9 @@ public class CreationStage implements Runnable {
 
     }
 
+    public CreationStage(User user) {
+
+        this.user = user;
+
+    }
 }

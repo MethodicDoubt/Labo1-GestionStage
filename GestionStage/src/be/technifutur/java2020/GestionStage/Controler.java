@@ -6,6 +6,7 @@ import be.technifutur.java2020.GestionStage.Menu.MenuFonctionnalite;
 import be.technifutur.java2020.GestionStage.Menu.MenuRole;
 import be.technifutur.java2020.GestionStage.Modeles.FonctionnaliteModel;
 import be.technifutur.java2020.GestionStage.Modeles.StageModel;
+import be.technifutur.java2020.GestionStage.User.User;
 import be.technifutur.java2020.GestionStage.Vues.VueMenuFonctionnalite;
 import be.technifutur.java2020.GestionStage.Vues.VueMenuRole;
 
@@ -20,7 +21,7 @@ public class Controler implements Runnable {
     GestionnaireFonctionnalite fonctionnaliteChoisie;
 
     MenuRole roleUser = new MenuRole();
-    FonctionnaliteModel map = new FonctionnaliteModel();
+    FonctionnaliteModel map = new FonctionnaliteModel(new User());
     MenuFonctionnalite menuFonctionnalite = new MenuFonctionnalite();
 
     //--------------------------------------------------------------------- Setting des vues
@@ -80,7 +81,7 @@ public class Controler implements Runnable {
                         case AFFICHAGE: fonctionnalite.run();
                         break;
 
-                        case INSCRIPTION: fonctionnalite.run();
+                        case SELECTION: fonctionnalite.run();
                         break;
 
                         default:
@@ -156,7 +157,7 @@ public class Controler implements Runnable {
                         case AFFICHAGE: fonctionnalite.run();
                             break;
 
-                        case INSCRIPTION: fonctionnalite.run();
+                        case SELECTION: fonctionnalite.run();
                             break;
 
                         default:

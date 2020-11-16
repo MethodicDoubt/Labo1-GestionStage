@@ -19,13 +19,10 @@ public class MenuFonctionnalite {
             case "3" : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.SUPPRESSION;
                 return;
 
-            case "4" : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.INSCRIPTION;
+            case "4" : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.SELECTION;
                 return;
 
-            case "5" : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.SELECTION;
-                return;
-
-            case "6" : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.AFFICHAGE;
+            case "5" : this.gestionnaireFonctionnalite = GestionnaireFonctionnalite.AFFICHAGE;
                 return;
 
             default : gestionnaireFonctionnalite = null;

@@ -2,25 +2,25 @@ package be.technifutur.java2020.GestionStage.Fonctionnalites;
 
 import be.technifutur.java2020.GestionStage.Gestionnaires.GestionnaireSelectionnerSousFonctionnalite;
 import be.technifutur.java2020.GestionStage.Menu.MenuSelectionnerSousFonctionnalite;
-import be.technifutur.java2020.GestionStage.Modeles.ActionStage;
 import be.technifutur.java2020.GestionStage.Modeles.SelectionnerSousFonctionnaliteModel;
 import be.technifutur.java2020.GestionStage.Modeles.StageModel;
-import be.technifutur.java2020.GestionStage.Primitives.Stage;
+import be.technifutur.java2020.GestionStage.User.User;
 import be.technifutur.java2020.GestionStage.Vues.VueMenuSelectionnerSousFonctionnalite;
 
 import java.util.Scanner;
 
 public class SelectionnerStage implements Runnable {
 
-    private Stage stageSelectionne;
+    private User user;
 
-    private SelectionnerSousFonctionnaliteModel map = new SelectionnerSousFonctionnaliteModel();
+    private SelectionnerSousFonctionnaliteModel map;
 
     private VueMenuSelectionnerSousFonctionnalite vueMenuSelectionnerSousFonctionnalite = new VueMenuSelectionnerSousFonctionnalite();
 
     private MenuSelectionnerSousFonctionnalite menuSelectionnerSousFonctionnalite = new MenuSelectionnerSousFonctionnalite();
 
     private GestionnaireSelectionnerSousFonctionnalite sousFonctionnaliteChoisie;
+
 
     @Override
     public void run() {
@@ -39,7 +39,7 @@ public class SelectionnerStage implements Runnable {
 
         entree = scanner.nextLine();
 
-        this.stageSelectionne = StageModel.getStageByName(entree);
+        this.user.setStageSelectionne(StageModel.getStageByName(entree));
 
         vueMenuSelectionnerSousFonctionnalite.afficherMenuSelectionnerSousFonctionnalite();
 
@@ -51,11 +51,9 @@ public class SelectionnerStage implements Runnable {
 
             sousFonctionnaliteChoisie = menuSelectionnerSousFonctionnalite.getSousFonctionnaliteChoisie();
 
-            ActionStage sousFonctionnalite = map.getSelectionnerSousFonctionnalite(sousFonctionnaliteChoisie);
+            Runnable sousFonctionnalite = map.getSelectionnerSousFonctionnalite(sousFonctionnaliteChoisie);
 
             if (sousFonctionnalite != null) {
-
-                sousFonctionnalite.setStage(this.stageSelectionne);
 
                 sousFonctionnalite.run();
 
@@ -71,9 +69,11 @@ public class SelectionnerStage implements Runnable {
 
     }
 
-    public Stage getStageSelectionne() {
+    public SelectionnerStage(User user) {
 
-        return stageSelectionne;
+        this.user = user;
+
+        this.map = new SelectionnerSousFonctionnaliteModel(user);
 
     }
 

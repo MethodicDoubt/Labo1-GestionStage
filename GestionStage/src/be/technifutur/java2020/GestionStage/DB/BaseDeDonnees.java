@@ -35,6 +35,7 @@ public class BaseDeDonnees implements Serializable{
         } catch (
                 IOException e) {
             System.out.println("Erreur : 15646135465132168554");
+            e.printStackTrace();
         }
 
     }

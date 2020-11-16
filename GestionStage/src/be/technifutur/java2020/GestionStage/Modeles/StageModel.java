@@ -52,6 +52,8 @@ public abstract class StageModel {
 
     }
 
+    //-----------------------------------------------------------------------------------------------------------------
+
     public static void load() {
 
         File fichier = new File("Données_Sauvegardées");

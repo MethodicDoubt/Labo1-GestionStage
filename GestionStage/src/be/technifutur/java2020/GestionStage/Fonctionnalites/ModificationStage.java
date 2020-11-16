@@ -3,6 +3,7 @@ package be.technifutur.java2020.GestionStage.Fonctionnalites;
 
 import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import be.technifutur.java2020.GestionStage.Primitives.Stage;
+import be.technifutur.java2020.GestionStage.User.User;
 import be.technifutur.java2020.GestionStage.Utils.DateUtils;
 
 import java.util.Scanner;
@@ -11,7 +12,7 @@ public class ModificationStage implements Runnable {
 
     //------------------------------------------------------------------------ PROPRIETES
 
-
+    private User user;
 
     //------------------------------------------------------------------------- METHOD
 
@@ -74,4 +75,9 @@ public class ModificationStage implements Runnable {
 
     }
 
+    public ModificationStage(User user) {
+
+        this.user = user;
+
+    }
 }

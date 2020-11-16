@@ -1,11 +1,11 @@
 package be.technifutur.java2020.GestionStage.Primitives;
 
+import be.technifutur.java2020.GestionStage.Modeles.Participation;
 import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.*;
 
 public class Stage extends StageModel implements Serializable {
@@ -21,6 +21,8 @@ public class Stage extends StageModel implements Serializable {
     private String dateFinFormat;
 
     private HashMap<String, Activite> mapActivite;
+
+    private HashMap<Personne, Participation> mapParticipation;
 
     //------------------------------------------------------------------------ SETTER
 
@@ -84,6 +86,12 @@ public class Stage extends StageModel implements Serializable {
 
     }
 
+    public Map<Personne, Participation> getMapParticipation() {
+
+        return mapParticipation;
+
+    }
+
     //----------------------------------------------------------------------- CONSTRUCTEUR
 
     public Stage(String nom, LocalDateTime dateDebut, LocalDateTime dateFin) {
@@ -92,6 +100,7 @@ public class Stage extends StageModel implements Serializable {
         setDateDebut(dateDebut);
         setDateFin(dateFin);
         mapActivite = new HashMap<>();
+        mapParticipation = new HashMap<>();
 
     }
 
@@ -138,6 +147,27 @@ public class Stage extends StageModel implements Serializable {
         mapActivite.remove(s);
 
     }
+
+    public void addActiviteToPersonne(Personne h, Activite a){
+
+        mapParticipation.get(h).addActiviteParticipation(a);
+
+    }
+
+    public void removeParticipation (Participation p){
+
+        this.mapParticipation.remove(p);
+
+    }
+
+    //------------------------------------------------------------------------------
+
+    public void inscriptionStage (Personne p){
+
+        mapParticipation.put(p, new Participation(p));
+
+    }
+
 
     //------------------------------------------------------------------------------- METHODE D'INTERFACE
 

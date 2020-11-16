@@ -1,15 +1,14 @@
 package be.technifutur.java2020.GestionStage.Fonctionnalites.SelectionnerSousFonctionnalites;
 
-import be.technifutur.java2020.GestionStage.Modeles.ActionStage;
-import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import be.technifutur.java2020.GestionStage.Primitives.Activite;
 import be.technifutur.java2020.GestionStage.Primitives.Stage;
+import be.technifutur.java2020.GestionStage.User.User;
 
 import java.util.Scanner;
 
-public class RetirerActivite implements ActionStage {
+public class RetirerActivite implements Runnable {
 
-    private Stage stageSelectionne;
+    private User user;
 
     @Override
     public void run() {
@@ -22,7 +21,7 @@ public class RetirerActivite implements ActionStage {
 
             System.out.println("<Voici la liste des activités>");
 
-            for (Activite a : stageSelectionne.getMapActivite().values()) {
+            for (Activite a : user.getStageSelectionne().getMapActivite().values()) {
 
                 System.out.println(a.afficherActivite());
 
@@ -32,15 +31,15 @@ public class RetirerActivite implements ActionStage {
 
             name = scanner.nextLine();
 
-            activiteToRemoved = stageSelectionne.getActiviteByName(name);
+            activiteToRemoved = user.getStageSelectionne().getActiviteByName(name);
 
             System.out.println("Suppression de : " + activiteToRemoved.getName());
 
-            stageSelectionne.remove(name);
+            user.getStageSelectionne().remove(name);
 
             System.out.println("<Voici la nouvelle liste des activités de ce stage>");
 
-            for (Activite a : stageSelectionne.getMapActivite().values()) {
+            for (Activite a : user.getStageSelectionne().getMapActivite().values()) {
 
                 System.out.println(a.afficherActivite());
 
@@ -54,8 +53,9 @@ public class RetirerActivite implements ActionStage {
 
     }
 
-    public void setStage(Stage stageSelectionne) {
-        this.stageSelectionne = stageSelectionne;
-    }
+    public RetirerActivite(User user) {
 
+        this.user = user;
+
+    }
 }

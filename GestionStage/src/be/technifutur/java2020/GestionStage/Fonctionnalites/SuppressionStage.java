@@ -2,10 +2,13 @@ package be.technifutur.java2020.GestionStage.Fonctionnalites;
 
 import be.technifutur.java2020.GestionStage.Modeles.StageModel;
 import be.technifutur.java2020.GestionStage.Primitives.Stage;
+import be.technifutur.java2020.GestionStage.User.User;
 
 import java.util.Scanner;
 
 public class SuppressionStage implements Runnable{
+
+    private User user;
 
     @Override
     public void run(){
@@ -48,4 +51,9 @@ public class SuppressionStage implements Runnable{
 
     }
 
+    public SuppressionStage(User user) {
+
+        this.user = user;
+
+    }
 }
